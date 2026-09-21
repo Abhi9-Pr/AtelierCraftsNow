@@ -1,0 +1,14 @@
+{
+  "title": "Tower in the Mist",
+  "theme": "fantasy-whimsical",
+  "artwork": "/artwork/misted-castle.jpg",
+  "artworkAlt": "Watercolor of a stone castle with three towers, half hidden in pale green mist above layered hills.",
+  "quote": "A tower waits past the mist, holding your place.",
+  "headerText": "WHERE THOUGHTS WANDER",
+  "description": "Three stone towers rise out of pale green fog. The hills below are built up in thin, patient washes.",
+  "priceINR": 199,
+  "available": true,
+  "featured": true,
+  "order": 2,
+  "artType": "watercolor-wet-on-wet-wash"
+}

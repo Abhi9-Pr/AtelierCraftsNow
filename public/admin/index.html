@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Content admin</title>
+  </head>
+  <body>
+    <!--
+      The admin panel is Decap CMS, pinned to one exact version and checked against a
+      fingerprint, so a changed file on the delivery network cannot run here.
+      The site's own address is added at runtime, so the login works on any domain.
+    -->
+    <script>
+      window.CMS_MANUAL_INIT = true
+    </script>
+    <script
+      src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"
+      integrity="sha384-tbnFsiSBvMm2vOLu70Mx7HlnMj6kXxR0Tdo0USlY9564mb1AyMnIdCjOZ738PWPr"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // The Theme, Art type and Category dropdowns keep the list they first loaded, so one
+      // saved in this tab would be missing from them. Reloading once after one is saved
+      // gives the next form the fresh lists.
+      const listCollections = ['themes', 'art-types', 'back-groups']
+      function refreshAfterListSave({ entry }) {
+        if (listCollections.includes(entry.get('collection'))) {
+          setTimeout(() => window.location.reload(), 800)
+        }
+      }
+      CMS.registerEventListener({ name: 'postSave', handler: refreshAfterListSave })
+      CMS.registerEventListener({ name: 'postPublish', handler: refreshAfterListSave })
+      CMS.init({ config: { backend: { base_url: window.location.origin } } })
+    </script>
+  </body>
+</html>

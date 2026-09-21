@@ -1,0 +1,14 @@
+{
+  "title": "Harvest Moon",
+  "theme": "poetic-musings",
+  "artwork": "/artwork/harvest-moon.jpg",
+  "artworkAlt": "Watercolor of a large pale moon over dark rolling hills, the horizon glowing gold below a night-blue sky.",
+  "quote": "The moon is a page nobody has written on yet.",
+  "headerText": "CATCH A THOUGHT",
+  "description": "A full moon over low hills, painted in soft gold. The reverse leaves room for a first line.",
+  "priceINR": 199,
+  "available": true,
+  "featured": true,
+  "order": 5,
+  "artType": "watercolor-wet-on-wet-wash"
+}

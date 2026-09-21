@@ -1,0 +1,8 @@
+{
+  "group": "line-style",
+  "label": "Grid",
+  "lineType": "grid",
+  "spacing": "regular",
+  "available": true,
+  "order": 4
+}

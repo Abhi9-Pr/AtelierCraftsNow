@@ -1,0 +1,7 @@
+{
+  "group": "corner-emblem",
+  "label": "Star",
+  "image": "/back/emblem-star.svg",
+  "available": true,
+  "order": 1
+}

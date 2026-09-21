@@ -1,0 +1,8 @@
+{
+  "group": "line-style",
+  "label": "Dotted",
+  "lineType": "dotted",
+  "spacing": "regular",
+  "available": true,
+  "order": 3
+}

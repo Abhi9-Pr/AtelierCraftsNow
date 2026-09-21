@@ -1,0 +1,10 @@
+{
+  "label": "Corner emblem",
+  "kind": "stamp",
+  "slot": "corner",
+  "choice": "optional",
+  "size": "small",
+  "align": "right",
+  "hint": "A small mark in the top corner.",
+  "order": 7
+}

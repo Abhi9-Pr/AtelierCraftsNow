@@ -1,0 +1,276 @@
+{
+  "siteUrl": "https://ateliercraftsnow.co.in",
+  "bookmarks": [
+    {
+      "id": "emberwing-dragon",
+      "title": "Emberwing",
+      "available": true,
+      "headerText": "WANDERING THOUGHTS",
+      "priceINR": 199
+    },
+    {
+      "id": "learn-with-joy",
+      "title": "Learn with Joy",
+      "available": true,
+      "headerText": "WANDERING THOUGHTS"
+    },
+    {
+      "id": "misted-castle",
+      "title": "Tower in the Mist",
+      "available": true,
+      "headerText": "WHERE THOUGHTS WANDER",
+      "priceINR": 199
+    },
+    {
+      "id": "frostwing-dragon",
+      "title": "Frostwing",
+      "available": false,
+      "headerText": "CATCH A THOUGHT",
+      "priceINR": 199
+    },
+    {
+      "id": "lantern-forest",
+      "title": "Lantern Wood",
+      "available": true,
+      "headerText": "WANDERING THOUGHTS",
+      "priceINR": 199
+    },
+    {
+      "id": "harvest-moon",
+      "title": "Harvest Moon",
+      "available": true,
+      "headerText": "CATCH A THOUGHT",
+      "priceINR": 199
+    },
+    {
+      "id": "still-water",
+      "title": "Still Water",
+      "available": true,
+      "headerText": "MINDFUL MUSINGS",
+      "priceINR": 199
+    },
+    {
+      "id": "winter-margins",
+      "title": "Winter Margins",
+      "available": true,
+      "headerText": "WHERE THOUGHTS WANDER",
+      "priceINR": 199
+    },
+    {
+      "id": "bookplate-set",
+      "title": "The Bookplate Set",
+      "available": true,
+      "headerText": "MINDFUL MUSINGS",
+      "showSignature": true
+    },
+    {
+      "id": "painted-to-order",
+      "title": "Painted to Order",
+      "available": true,
+      "headerText": "WHERE THOUGHTS WANDER"
+    },
+    {
+      "id": "test-horror-title",
+      "title": "Test Horror Title",
+      "available": true,
+      "headerText": "WANDERING THOUGHTS",
+      "priceINR": 99,
+      "showSignature": true
+    }
+  ],
+  "back": [
+    {
+      "slug": "back-template",
+      "label": "Back picture",
+      "kind": "template",
+      "slot": "background",
+      "required": true,
+      "options": [
+        {
+          "slug": "back-template-plain-parchment",
+          "label": "Plain parchment"
+        },
+        {
+          "slug": "back-template-soft-wash",
+          "label": "Soft wash",
+          "image": "/back/soft-wash.jpg"
+        },
+        {
+          "slug": "back-template-border-frame",
+          "label": "Gilt border",
+          "image": "/back/border-frame.jpg"
+        },
+        {
+          "slug": "back-template-pressed-leaves",
+          "label": "Pressed leaves",
+          "image": "/back/pressed-leaves.jpg"
+        }
+      ],
+      "hint": "A picture behind the writing side."
+    },
+    {
+      "slug": "line-style",
+      "label": "Line style",
+      "kind": "lines",
+      "slot": "lines",
+      "required": true,
+      "options": [
+        {
+          "slug": "line-style-ruled",
+          "label": "Ruled",
+          "lineType": "ruled",
+          "spacing": "regular"
+        },
+        {
+          "slug": "line-style-wide-ruled",
+          "label": "Wide ruled",
+          "lineType": "ruled",
+          "spacing": "wide"
+        },
+        {
+          "slug": "line-style-dotted",
+          "label": "Dotted",
+          "lineType": "dotted",
+          "spacing": "regular"
+        },
+        {
+          "slug": "line-style-grid",
+          "label": "Grid",
+          "lineType": "grid",
+          "spacing": "regular"
+        },
+        {
+          "slug": "line-style-dot-grid",
+          "label": "Dot grid",
+          "lineType": "dot-grid",
+          "spacing": "regular"
+        },
+        {
+          "slug": "line-style-blank",
+          "label": "Blank",
+          "lineType": "none",
+          "spacing": "regular"
+        }
+      ],
+      "hint": "The lines you write on."
+    },
+    {
+      "slug": "heading",
+      "label": "Heading",
+      "kind": "text",
+      "slot": "heading",
+      "required": true,
+      "options": [
+        {
+          "slug": "heading-wandering-thoughts",
+          "label": "Wandering thoughts",
+          "text": "WANDERING THOUGHTS"
+        },
+        {
+          "slug": "heading-where-thoughts-wander",
+          "label": "Where thoughts wander",
+          "text": "WHERE THOUGHTS WANDER"
+        },
+        {
+          "slug": "heading-mindful-musings",
+          "label": "Mindful musings",
+          "text": "MINDFUL MUSINGS"
+        },
+        {
+          "slug": "heading-catch-a-thought",
+          "label": "Catch a thought",
+          "text": "CATCH A THOUGHT"
+        },
+        {
+          "slug": "heading-margin-notes",
+          "label": "Margin notes",
+          "text": "MARGIN NOTES"
+        },
+        {
+          "slug": "heading-lines-i-love",
+          "label": "Lines I love",
+          "text": "LINES I LOVE"
+        }
+      ],
+      "hint": "The words printed at the top of the back.",
+      "allowCustomText": true,
+      "maxLength": 30
+    },
+    {
+      "slug": "date-signed-lines",
+      "label": "Date and Signed lines",
+      "kind": "toggle",
+      "slot": "signature",
+      "required": false,
+      "options": [],
+      "hint": "Two short lines at the foot, for a date and a signature.",
+      "defaultOn": false
+    },
+    {
+      "slug": "signature-picture",
+      "label": "Signature picture",
+      "kind": "stamp",
+      "slot": "signature",
+      "required": false,
+      "options": [
+        {
+          "slug": "signature-picture-flourish",
+          "label": "Flourish",
+          "image": "/back/signature-flourish.svg"
+        },
+        {
+          "slug": "signature-picture-scrawl",
+          "label": "Scrawl",
+          "image": "/back/signature-scrawl.svg"
+        }
+      ],
+      "hint": "A small signature or flourish printed on the back.",
+      "size": "medium",
+      "align": "center"
+    },
+    {
+      "slug": "watermark",
+      "label": "Watermark",
+      "kind": "stamp",
+      "slot": "footer",
+      "required": false,
+      "options": [
+        {
+          "slug": "watermark-moon",
+          "label": "Crescent moon",
+          "image": "/back/watermark-moon.svg"
+        },
+        {
+          "slug": "watermark-leaf",
+          "label": "Leaf",
+          "image": "/back/watermark-leaf.svg"
+        }
+      ],
+      "hint": "A faint mark at the foot of the back.",
+      "size": "small",
+      "align": "center"
+    },
+    {
+      "slug": "corner-emblem",
+      "label": "Corner emblem",
+      "kind": "stamp",
+      "slot": "corner",
+      "required": false,
+      "options": [
+        {
+          "slug": "corner-emblem-star",
+          "label": "Star",
+          "image": "/back/emblem-star.svg"
+        },
+        {
+          "slug": "corner-emblem-feather",
+          "label": "Feather",
+          "image": "/back/emblem-feather.svg"
+        }
+      ],
+      "hint": "A small mark in the top corner.",
+      "size": "small",
+      "align": "right"
+    }
+  ]
+}

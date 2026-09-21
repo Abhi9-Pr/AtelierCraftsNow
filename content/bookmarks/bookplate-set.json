@@ -1,0 +1,13 @@
+{
+  "title": "The Bookplate Set",
+  "theme": "custom-orders",
+  "artwork": "/artwork/bookplate-monogram.jpg",
+  "artworkAlt": "Watercolor bookplate design with a thin sage and gold frame around an empty panel, waiting for a name.",
+  "quote": "Every book on this shelf belongs to someone.",
+  "headerText": "MINDFUL MUSINGS",
+  "description": "Your name on one side, a signed and dated line on the other. Made in sets for shelves and gifts.",
+  "available": true,
+  "showSignature": true,
+  "order": 8,
+  "artType": "watercolor-wet-on-wet-wash"
+}

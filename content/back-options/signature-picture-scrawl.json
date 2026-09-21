@@ -1,0 +1,7 @@
+{
+  "group": "signature-picture",
+  "label": "Scrawl",
+  "image": "/back/signature-scrawl.svg",
+  "available": true,
+  "order": 2
+}

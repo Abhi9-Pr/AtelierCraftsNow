@@ -1,0 +1,8 @@
+{
+  "group": "line-style",
+  "label": "Dot grid",
+  "lineType": "dot-grid",
+  "spacing": "regular",
+  "available": true,
+  "order": 5
+}

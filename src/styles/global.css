@@ -1,0 +1,553 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Fonts — self-hosted, latin + latin-ext subsets, no third-party CDN.
+   ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-ext-400-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/karla-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/karla-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/jost-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/jost-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ------------------------------------------------------------------
+   Design tokens. `static` keeps every token on :root even when no
+   utility references it, so hand-written CSS can always var() them.
+   ------------------------------------------------------------------ */
+
+@theme static {
+  /* Color */
+  --color-ink: #1f1b16;
+  --color-ink-soft: #4a4239;
+  --color-paper: #faf7f2;
+  --color-parchment: #f1ebe1;
+  --color-linen: #e3dacd;
+  --color-clay: #a8705a;
+  /* Clay darkened to 4.9:1 against paper, for the fill of solid buttons that carry small
+     paper-coloured text. Plain clay is 3.83:1, fine for rings and lines, not for that text. */
+  --color-clay-deep: #92614e;
+  --color-sage: #7c8b72;
+  --color-gilt: #b79b6b;
+  /* Errors and the delete button on the owner's dashboard. 8:1 against paper. */
+  --color-alert: #8a2f22;
+
+  /* Type */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Karla", system-ui, sans-serif;
+  --font-caps: "Jost", system-ui, sans-serif;
+
+  /* Tracking — the signature of the brand. These replace Tailwind's
+     built-in tracking-wide / -wider / -widest on purpose. */
+  --tracking-wide: 0.18em;
+  --tracking-wider: 0.28em;
+  --tracking-widest: 0.42em;
+
+  /* Vertical rhythm between page sections; widened at md below. */
+  --spacing-section: 4rem;
+
+  /* Height of the fixed site header. Pages clear it with pt-header. */
+  --spacing-header: 5rem;
+
+  /* Motion */
+  --ease-flip: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Width of a bookmark card. Shared with the text set beneath each one. */
+  --bookmark-width: clamp(9.375rem, 7rem + 6vw, 12.5rem);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --spacing-section: 6rem;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    scroll-padding-top: var(--spacing-header);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-paper);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-clay) 24%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal. FadeIn only applies .fade-in when motion is allowed,
+   so nothing here needs a reduced-motion override.
+   ------------------------------------------------------------------ */
+
+@layer components {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition:
+      opacity 0.8s var(--ease-flip),
+      transform 0.8s var(--ease-flip);
+  }
+
+  .fade-in[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Catalog filtering. Items stay mounted. A hidden item fades and drops,
+   then leaves the layout when the fade ends (`display` is transitioned
+   discretely). Browsers without allow-discrete simply switch instantly.
+   ------------------------------------------------------------------ */
+
+@layer components {
+  .catalog-grid {
+    --catalog-gap: 1.25rem;
+    column-gap: var(--catalog-gap);
+  }
+
+  @media (min-width: 48rem) {
+    .catalog-grid {
+      --catalog-gap: 2rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .catalog-grid {
+      --catalog-gap: 3rem;
+    }
+  }
+
+  /* 2 columns, then 3 from md, then 4 from lg */
+  .catalog-item {
+    width: calc((100% - var(--catalog-gap)) / 2);
+  }
+
+  @media (min-width: 48rem) {
+    .catalog-item {
+      width: calc((100% - 2 * var(--catalog-gap)) / 3);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .catalog-item {
+      width: calc((100% - 3 * var(--catalog-gap)) / 4);
+    }
+  }
+
+  .catalog-item {
+    transition:
+      opacity 300ms ease-out,
+      transform 300ms ease-out,
+      display 300ms allow-discrete;
+  }
+
+  .catalog-item[data-shown="false"] {
+    display: none;
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  @starting-style {
+    .catalog-item {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .catalog-item {
+      transition: none;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Mobile menu overlay. Visibility flips at once on open, so focus can
+   move in straight away, and waits for the fade to end on close.
+   ------------------------------------------------------------------ */
+
+@layer components {
+  .mobile-nav {
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 300ms ease-out,
+      visibility 0s linear 300ms;
+  }
+
+  .mobile-nav[data-open="true"] {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      opacity 300ms ease-out,
+      visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav,
+    .mobile-nav[data-open="true"] {
+      transition: none;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Bookmark card.
+   --p is the flip progress (0 front, 1 back) and --h is the hover lift.
+   Registering them as numbers lets the browser tween them, so the
+   shadow can be computed from the same eased progress as the rotation.
+   ------------------------------------------------------------------ */
+
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --h {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@layer components {
+  .bookmark {
+    --flip-duration: 0.75s;
+    position: relative;
+    width: min(100%, var(--bookmark-width));
+    aspect-ratio: 1 / 3;
+    perspective: 1600px;
+    container-type: inline-size;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      --p var(--flip-duration) var(--ease-flip),
+      --h 0.4s var(--ease-flip);
+  }
+
+  .bookmark[data-speed="slow"] {
+    --flip-duration: 1.4s;
+  }
+
+  .bookmark[data-flipped="true"] {
+    --p: 1;
+  }
+
+  /* Shadow on the surface under the card. It is its own layer so it can
+     move independently: as the card turns it lifts, narrows, drifts and
+     softens, then settles again on the far side. */
+  .bookmark::before {
+    --theta: calc(var(--p) * 180deg);
+    --lift: sin(var(--theta));
+    --squeeze: max(0.18, abs(cos(var(--theta))));
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background: var(--color-ink);
+    pointer-events: none;
+    opacity: calc(0.3 - var(--lift) * 0.12 + var(--h) * 0.05);
+    filter: blur(calc(14px + var(--lift) * 8px + var(--h) * 3px));
+    transform: translate3d(
+        calc(5px + var(--lift) * 12px),
+        calc(16px + var(--lift) * 14px + var(--h) * 5px),
+        0
+      )
+      scale(calc(0.94 * var(--squeeze)), 0.96);
+  }
+
+  .bookmark-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(2deg) rotateY(0deg) scale(1);
+    transition: transform var(--flip-duration) var(--ease-flip);
+  }
+
+  .bookmark[data-flipped="true"] .bookmark-inner {
+    transform: rotateX(2deg) rotateY(180deg) scale(1);
+  }
+
+  .bookmark-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .bookmark-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Darkens the foot of the artwork behind the quote. The gradient is dense (75% or more)
+     under the text itself and fades out only across the padding above it, so the quote
+     stays at 4.5:1 or better even over pure white artwork. */
+  .bookmark-scrim {
+    --scrim-fade: 38cqw;
+    padding: var(--scrim-fade) 9cqw 10cqw;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-ink) 90%, transparent) 0,
+      color-mix(in srgb, var(--color-ink) 75%, transparent) calc(100% - var(--scrim-fade)),
+      transparent 100%
+    );
+  }
+
+  .bookmark-hit {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .bookmark:hover {
+      --h: 1;
+    }
+
+    .bookmark:hover .bookmark-inner {
+      transform: rotateX(2deg) rotateY(0deg) scale(1.02);
+    }
+
+    .bookmark[data-flipped="true"]:hover .bookmark-inner {
+      transform: rotateX(2deg) rotateY(180deg) scale(1.02);
+    }
+  }
+
+  /* Reduced motion: same two states, no rotation, no lift. The faces sit
+     on top of each other and cross-fade in 120ms. */
+  @media (prefers-reduced-motion: reduce) {
+    .bookmark {
+      --p: 0 !important;
+      --h: 0 !important;
+      transition: none;
+    }
+
+    .bookmark .bookmark-inner,
+    .bookmark[data-flipped="true"] .bookmark-inner,
+    .bookmark[data-flipped="true"]:hover .bookmark-inner {
+      transform: none;
+      transition: none;
+    }
+
+    .bookmark-face {
+      backface-visibility: visible;
+      -webkit-backface-visibility: visible;
+      transition: opacity 120ms linear;
+    }
+
+    .bookmark-back {
+      transform: none;
+      opacity: 0;
+    }
+
+    .bookmark[data-flipped="true"] .bookmark-front {
+      opacity: 0;
+    }
+
+    .bookmark[data-flipped="true"] .bookmark-back {
+      opacity: 1;
+    }
+  }
+
+  /* Stand-in behind the artwork: a soft wash. Every picture in public/artwork
+     gets a real blurred placeholder at build time, which replaces it below. */
+  .bookmark-wash {
+    --wash-a: var(--color-linen);
+    --wash-b: var(--color-clay);
+    position: absolute;
+    inset: -12%;
+    filter: blur(18px);
+    background:
+      radial-gradient(circle at 28% 22%, var(--wash-a) 0, transparent 58%),
+      radial-gradient(circle at 74% 80%, var(--wash-b) 0, transparent 62%),
+      var(--color-parchment);
+  }
+
+  /* With a real placeholder the wash shows the artwork itself, enlarged and blurred. */
+  .bookmark-wash[data-lqip] {
+    inset: -4%;
+    background-position: center;
+    background-size: cover;
+    filter: blur(10px);
+  }
+
+  /* Paper grain: feTurbulence noise inlined as an SVG data URI, so there
+     is no raster texture file. Multiplied in at very low opacity. */
+  .paper-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.29 0 0 0 0 0.26 0 0 0 0 0.22 0 0 0 1.6 -0.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  /* The writing lines on the back. BackLines sets --rule-rhythm (the height of one cell)
+     and, for a custom pattern, --pattern. Each style is one repeating background. */
+  .back-lines {
+    --rule-rhythm: 22px;
+    overflow: hidden;
+  }
+
+  .back-lines-ruled {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--rule-rhythm) - 1px),
+      var(--color-linen) calc(var(--rule-rhythm) - 1px),
+      var(--color-linen) var(--rule-rhythm)
+    );
+  }
+
+  .back-lines-dotted {
+    background-image: radial-gradient(
+      circle at 50% calc(100% - 1px),
+      var(--color-linen) 1px,
+      transparent 1.5px
+    );
+    background-size: 6px var(--rule-rhythm);
+  }
+
+  .back-lines-grid {
+    background-image:
+      linear-gradient(to right, var(--color-linen) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-linen) 1px, transparent 1px);
+    background-size: var(--rule-rhythm) var(--rule-rhythm);
+  }
+
+  .back-lines-dot-grid {
+    background-image: radial-gradient(circle at 50% 50%, var(--color-linen) 1.2px, transparent 1.8px);
+    background-size: var(--rule-rhythm) var(--rule-rhythm);
+  }
+
+  .back-lines-custom {
+    background-image: var(--pattern);
+    background-repeat: repeat;
+  }
+}

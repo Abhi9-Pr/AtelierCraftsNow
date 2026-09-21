@@ -1,0 +1,10 @@
+{
+  "label": "Heading",
+  "kind": "text",
+  "slot": "heading",
+  "choice": "required",
+  "allowCustomText": true,
+  "maxLength": 30,
+  "hint": "The words printed at the top of the back.",
+  "order": 3
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Watermark",
+  "kind": "stamp",
+  "slot": "footer",
+  "choice": "optional",
+  "size": "small",
+  "align": "center",
+  "hint": "A faint mark at the foot of the back.",
+  "order": 6
+}

@@ -1,0 +1,395 @@
+# Configuration for the admin panel at /admin. See docs/SETUP.md, "The admin panel".
+
+backend:
+  name: github
+  # Change this to your own GitHub account and repository, for example: priya/ateliercraftsnow
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPOSITORY
+  branch: main
+  # The login helper that ships with the site, in functions/api. The site's own
+  # address is added by admin/index.html, so it is not written here.
+  auth_endpoint: api/auth
+
+# When the site runs on your own computer (npm run dev and npm run cms), the panel
+# edits the files directly and needs no login. This has no effect on the live site.
+local_backend: true
+
+# Changes are saved straight to the main branch, and the site rebuilds by itself.
+publish_mode: simple
+
+media_folder: public/artwork
+public_folder: /artwork
+
+locale: en
+
+collections:
+  - name: themes
+    label: Themes
+    label_singular: Theme
+    description: >-
+      Groups of bookmarks. A theme appears as a tab on the Collection page as soon
+      as it has at least one bookmark.
+    folder: content/themes
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: label
+    summary: "{{label}}"
+    fields:
+      - label: Name
+        name: label
+        widget: string
+        hint: The name shown on the tab, for example Botanical.
+      - label: Position
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first. Leave empty to put it last.
+
+  - name: art-types
+    label: Art types
+    label_singular: Art type
+    description: >-
+      The medium or style a bookmark is made in, such as Watercolor or Papercut. It is
+      shown under the bookmark's title. The Collection page adds an Art type filter once
+      two or more art types are in use.
+    folder: content/art-types
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: label
+    summary: "{{label}}"
+    fields:
+      - label: Name
+        name: label
+        widget: string
+        hint: The name shown on the card and in the filter, for example Linocut Printmaking.
+      - label: Position
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first. Leave empty to put it last.
+
+  - name: bookmarks
+    label: Bookmarks
+    label_singular: Bookmark
+    folder: content/bookmarks
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: The name shown under the card.
+      - label: Theme
+        name: theme
+        widget: relation
+        collection: themes
+        search_fields: [label]
+        value_field: "{{slug}}"
+        display_fields: [label]
+        hint: Add the theme first under Themes if it does not exist yet.
+      - label: Art type
+        name: artType
+        widget: relation
+        collection: art-types
+        search_fields: [label]
+        value_field: "{{slug}}"
+        display_fields: [label]
+        required: false
+        hint: The medium or style, such as Watercolor. Add it first under Art types if it does not exist yet.
+      - label: Picture
+        name: artwork
+        widget: image
+        choose_url: false
+        hint: The front of the bookmark. A JPEG, 600 x 1800 pixels, under about 150 KB.
+      - label: Picture description
+        name: artworkAlt
+        widget: text
+        pattern: [".{20,}", "Describe what is painted, in at least 20 characters."]
+        hint: One sentence for people who cannot see the picture. Say what is painted.
+      - label: Quote
+        name: quote
+        widget: string
+        pattern: ["^.{1,80}$", "Keep it under 80 characters."]
+        hint: The line printed over the picture. Keep it short.
+      - label: Header on the writing side
+        name: headerText
+        widget: relation
+        collection: back-options
+        search_fields: [label]
+        value_field: "{{text}}"
+        display_fields: [label]
+        # The headings are the choices of the back category whose file name is "heading".
+        filters:
+          - field: group
+            values: [heading]
+        hint: The words printed at the top of the back. Add more under Back choices, in the Heading category.
+      - label: Description
+        name: description
+        widget: text
+        hint: One or two sentences shown under the card.
+      - label: Price in rupees
+        name: priceINR
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: A plain number, such as 199. Leave empty for made-to-order pieces, which show Price on request.
+      - label: Available
+        name: available
+        widget: boolean
+        default: true
+        hint: Turn off to show Currently unavailable.
+      - label: Print Date and Signed lines on the back
+        name: showSignature
+        widget: boolean
+        default: false
+        required: false
+      - label: Show on the home page
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+        hint: The first three ticked appear on the home page, and the first is the card beside the headline.
+      - label: Position
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first. Leave empty and it goes after the older bookmarks.
+      - label: Date added
+        name: added
+        widget: datetime
+        default: "{{now}}"
+        required: false
+        hint: Filled in for you. Leave it alone.
+
+  - name: back-groups
+    label: Back categories
+    label_singular: Back category
+    description: >-
+      The things a visitor can choose for the back of a bookmark, such as the line
+      style, the heading or a signature picture. Each category is one kind of thing
+      and sits in one place on the back. Add the category here, then add its choices
+      under Back choices.
+    folder: content/back-groups
+    extension: json
+    format: json
+    media_folder: /public/back
+    public_folder: /back
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: label
+    summary: "{{label}} ({{kind}}, {{slot}})"
+    fields:
+      - label: Name
+        name: label
+        widget: string
+        hint: What visitors see, for example Line style or Signature picture.
+      - label: Kind
+        name: kind
+        widget: select
+        options:
+          - { label: "Back picture template (a full picture behind the back)", value: template }
+          - { label: "Line style (the writing lines)", value: lines }
+          - { label: "Words (such as the heading)", value: text }
+          - { label: "Picture to place (such as a signature or watermark)", value: stamp }
+          - { label: "On or off switch (such as the Date and Signed lines)", value: toggle }
+        hint: What sort of thing this is. It decides which places it can go in.
+      - label: Place on the back
+        name: slot
+        widget: select
+        options:
+          - { label: "Whole back, behind everything (picture templates)", value: background }
+          - { label: "Heading, at the top (words)", value: heading }
+          - { label: "Writing area (line styles)", value: lines }
+          - { label: "Signature area, below the writing", value: signature }
+          - { label: "Foot of the back", value: footer }
+          - { label: "Top corner", value: corner }
+        hint: >-
+          Picture templates go behind everything, line styles in the writing area, and
+          words in the heading or foot. Pictures and switches go in the signature area,
+          the foot or the corner. Heading, writing area and background hold one category
+          each. The others can hold several.
+      - label: Help text
+        name: hint
+        widget: string
+        required: false
+        hint: Optional. A short line shown to visitors under the category name.
+      - label: Visitor choice
+        name: choice
+        widget: select
+        options:
+          - { label: "Automatic (must choose for a back picture, line style or words; may choose none for the rest)", value: auto }
+          - { label: "Visitor must choose one", value: required }
+          - { label: "Visitor may choose none", value: optional }
+        default: auto
+        required: false
+        hint: Automatic suits most categories. Pick another only to change that.
+      - label: Visitors can type their own words
+        name: allowCustomText
+        widget: boolean
+        default: false
+        required: false
+        hint: Only for a Words category. Adds a box for the visitor's own text.
+      - label: Longest own text, in characters
+        name: maxLength
+        widget: number
+        value_type: int
+        min: 1
+        max: 60
+        default: 30
+        required: false
+        hint: Only for a Words category that allows visitors' own text.
+      - label: On to begin with
+        name: defaultOn
+        widget: boolean
+        default: false
+        required: false
+        hint: Only for an On or off switch.
+      - label: Extra price in rupees
+        name: priceINR
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: Only for an On or off switch. Added to the price when it is on. Prices for other categories are set on each choice.
+      - label: Picture when on
+        name: image
+        widget: image
+        choose_url: false
+        required: false
+        hint: >-
+          Only for an On or off switch. A PNG or SVG with a transparent background,
+          drawn when the switch is on. Leave empty for a switch that draws the Date
+          and Signed lines. There can be only one of those, and it goes in the
+          signature area.
+      - label: Picture size
+        name: size
+        widget: select
+        options:
+          - { label: Small, value: small }
+          - { label: Medium, value: medium }
+          - { label: Large, value: large }
+        default: medium
+        required: false
+        hint: For a Picture to place, or an On or off switch that has a picture.
+      - label: Picture alignment
+        name: align
+        widget: select
+        options:
+          - { label: Left, value: left }
+          - { label: Centre, value: center }
+          - { label: Right, value: right }
+        default: center
+        required: false
+        hint: For a Picture to place, or an On or off switch that has a picture.
+      - label: Position
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first. Leave empty to put it last.
+
+  - name: back-options
+    label: Back choices
+    label_singular: Back choice
+    description: >-
+      The choices inside each back category, such as Dotted or Grid inside Line style.
+      Fill in only the fields that suit the category. The hint under each field says
+      which. A category shows to visitors once it has at least one choice.
+    folder: content/back-options
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{group}}-{{label}}"
+    identifier_field: label
+    summary: "{{group}}: {{label}}"
+    media_folder: /public/back
+    public_folder: /back
+    fields:
+      - label: Category
+        name: group
+        widget: relation
+        collection: back-groups
+        search_fields: [label]
+        value_field: "{{slug}}"
+        display_fields: [label]
+        hint: Add the category first under Back categories if it does not exist yet.
+      - label: Name
+        name: label
+        widget: string
+        hint: What visitors see on this choice, for example Dotted or Moonlit wash.
+      - label: Picture
+        name: image
+        widget: image
+        choose_url: false
+        required: false
+        hint: >-
+          For a back picture template, a JPEG 600 x 1800 pixels in light colours so
+          writing stays readable. Leave empty for plain paper. For a picture to place,
+          a PNG or SVG with a transparent background. For a custom line pattern, a PNG
+          or SVG tile.
+      - label: Words
+        name: text
+        widget: string
+        required: false
+        hint: Only for a Words category. The text itself, for example a heading.
+      - label: Line type
+        name: lineType
+        widget: select
+        options:
+          - { label: Ruled lines, value: ruled }
+          - { label: Dotted lines, value: dotted }
+          - { label: Grid, value: grid }
+          - { label: Dot grid, value: dot-grid }
+          - { label: Blank, value: none }
+          - { label: Custom pattern from the picture, value: custom }
+        required: false
+        hint: Only for a Line style category.
+      - label: Line spacing
+        name: spacing
+        widget: select
+        options:
+          - { label: Tight, value: tight }
+          - { label: Regular, value: regular }
+          - { label: Wide, value: wide }
+        default: regular
+        required: false
+        hint: Only for a Line style category.
+      - label: Extra price in rupees
+        name: priceINR
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: Optional. Added to the price when a visitor picks this choice.
+      - label: Available
+        name: available
+        widget: boolean
+        default: true
+        hint: Turn off to hide this choice without deleting it.
+      - label: Position
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first. The first choice is the one selected to begin with.

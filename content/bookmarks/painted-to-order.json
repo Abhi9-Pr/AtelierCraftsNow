@@ -1,0 +1,12 @@
+{
+  "title": "Painted to Order",
+  "theme": "custom-orders",
+  "artwork": "/artwork/commissioned-theme.jpg",
+  "artworkAlt": "Watercolor study of a loose misty landscape, with a row of color swatches along the bottom edge.",
+  "quote": "Name the place. We will paint the weather.",
+  "headerText": "WHERE THOUGHTS WANDER",
+  "description": "Bring a place, a story or a single color. It is painted by hand, then printed as a set.",
+  "available": true,
+  "order": 9,
+  "artType": "watercolor-wet-on-wet-wash"
+}

@@ -1,0 +1,33 @@
+# Read by Cloudflare Pages and Netlify. Other hosts ignore this file.
+
+# Built JS and CSS carry a content hash in their name, so they never change.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts keep their file names, so a long but finite lifetime.
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+# Artwork is replaced by dropping a new file in, so it is re-checked daily.
+/artwork/*
+  Cache-Control: public, max-age=86400
+
+# Back-of-bookmark pictures are also replaced by dropping a new file in.
+/back/*
+  Cache-Control: public, max-age=86400
+
+# Safety headers for every page. The content security policy is not here: the build writes it into each
+# page as a meta tag (vite/pageSecurity.ts), so it also holds on hosts that ignore this file, and it can
+# list only what the site was built to use. Where a header could be set twice by overlapping rules, the
+# values are joined, so each of these is set in one place only.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=31536000
+
+# The admin panel is for the owner: never cached, never listed in search.
+/admin/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex

@@ -1,0 +1,21 @@
+# Copy this file to .dev.vars to run the order API on your computer (npm run api).
+# .dev.vars is never committed. On the live site these are set in Cloudflare, under
+# Settings, then Variables and Secrets. None of them start with VITE_, so none of them
+# ever reach the published site.
+
+# The GitHub OAuth app that already signs you in to the admin panel.
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+# The GitHub usernames allowed to open the orders dashboard, separated by commas.
+ADMIN_GITHUB_USERS=your-github-username
+
+# A long random string that signs the dashboard login. Make one with:
+#   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+SESSION_SECRET=
+
+# Optional. Sends you an email for each new order, through Web3Forms (the same service as the form).
+WEB3FORMS_KEY=
+
+# Optional. Turns on the Cloudflare Turnstile spam check for new orders.
+TURNSTILE_SECRET=

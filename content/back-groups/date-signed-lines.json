@@ -1,0 +1,8 @@
+{
+  "label": "Date and Signed lines",
+  "kind": "toggle",
+  "slot": "signature",
+  "defaultOn": false,
+  "hint": "Two short lines at the foot, for a date and a signature.",
+  "order": 4
+}

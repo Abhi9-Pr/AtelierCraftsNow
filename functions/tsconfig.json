@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "../node_modules/.tmp/tsconfig.functions.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023"],
+    "types": ["@cloudflare/workers-types"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "noEmit": true,
+
+    /* Type checking */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "./**/*.ts",
+    "./_generated/catalog.json",
+    "../src/config/orderStatuses.ts",
+    "../src/config/requestTypes.ts",
+    "../src/lib/orderValidation.ts",
+    "../src/types/index.ts",
+    "../src/config/backSchema.ts",
+    "../src/config/nav.ts",
+    "../src/lib/back/*.ts",
+    "../src/lib/format.ts"
+  ]
+}

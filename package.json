@@ -1,0 +1,48 @@
+{
+  "name": "apatelier",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "cms": "decap-server",
+    "api": "wrangler pages dev dist --d1 DB=atelier-local",
+    "db:local": "wrangler d1 migrations apply DB --local --config wrangler.d1.toml",
+    "db:remote": "wrangler d1 migrations apply DB --remote --config wrangler.d1.toml",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "backup": "node scripts/backup.mjs",
+    "prune": "node scripts/prune.mjs",
+    "test": "node --experimental-strip-types --test \"tests/unit/*.test.ts\"",
+    "test:api": "node --experimental-strip-types --test --test-concurrency=1 \"tests/api/*.test.ts\"",
+    "test:e2e": "node --experimental-strip-types --test --test-concurrency=1 \"tests/e2e/*.test.ts\"",
+    "test:all": "npm run check && npm run test:api && npm run test:e2e",
+    "check": "npm run lint && tsc -b && npm test"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260921.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "axe-core": "4.13.0",
+    "decap-server": "^3.11.2",
+    "oxlint": "^1.81.0",
+    "playwright-core": "1.63.0",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "wrangler": "^4.135.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Back picture",
+  "kind": "template",
+  "slot": "background",
+  "choice": "required",
+  "hint": "A picture behind the writing side.",
+  "order": 1
+}

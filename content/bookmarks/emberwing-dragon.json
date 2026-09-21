@@ -1,0 +1,14 @@
+{
+  "title": "Emberwing",
+  "theme": "fantasy-whimsical",
+  "artwork": "/artwork/emberwing-dragon.jpg",
+  "artworkAlt": "Watercolor of a dragon in flight against a dusk sky, its wings dark against a glowing ember horizon.",
+  "quote": "The dragon sleeps on warm slate, dreaming of weather.",
+  "headerText": "WANDERING THOUGHTS",
+  "description": "A dragon crosses a dusk sky the color of banked coals. Painted in watercolor, printed on heavy textured stock.",
+  "priceINR": 199,
+  "available": true,
+  "featured": true,
+  "order": 1,
+  "artType": "watercolor-wet-on-wet-wash"
+}

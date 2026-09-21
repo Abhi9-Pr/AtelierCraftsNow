@@ -1,0 +1,13 @@
+{
+  "title": "Lantern Wood",
+  "theme": "fantasy-whimsical",
+  "artwork": "/artwork/lantern-forest.jpg",
+  "artworkAlt": "Watercolor of dark pine trees standing in fog, with small warm lanterns glowing between the trunks.",
+  "quote": "Someone left the lanterns lit between the pines.",
+  "headerText": "WANDERING THOUGHTS",
+  "description": "Pines fade into fog and small lanterns mark a path through them. Warm yellows against deep green.",
+  "priceINR": 199,
+  "available": true,
+  "order": 4,
+  "artType": "watercolor-wet-on-wet-wash"
+}

@@ -1,0 +1,14 @@
+{
+  "added": "2026-09-20T23:38:00.000+05:30",
+  "theme": "poetic-musings",
+  "available": true,
+  "featured": true,
+  "order": 1,
+  "artwork": "/artwork/4.png",
+  "artworkAlt": "alternate text for the image",
+  "title": "Learn with Joy",
+  "headerText": "WANDERING THOUGHTS",
+  "showSignature": false,
+  "quote": "Quote printed over the picture",
+  "description": "Test description about the image"
+}

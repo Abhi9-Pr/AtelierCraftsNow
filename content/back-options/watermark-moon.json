@@ -1,0 +1,7 @@
+{
+  "group": "watermark",
+  "label": "Crescent moon",
+  "image": "/back/watermark-moon.svg",
+  "available": true,
+  "order": 1
+}

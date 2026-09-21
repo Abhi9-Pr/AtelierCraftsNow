@@ -1,0 +1,8 @@
+{
+  "label": "Line style",
+  "kind": "lines",
+  "slot": "lines",
+  "choice": "required",
+  "hint": "The lines you write on.",
+  "order": 2
+}

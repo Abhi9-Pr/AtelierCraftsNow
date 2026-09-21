@@ -1,0 +1,10 @@
+{
+  "label": "Signature picture",
+  "kind": "stamp",
+  "slot": "signature",
+  "choice": "optional",
+  "size": "medium",
+  "align": "center",
+  "hint": "A small signature or flourish printed on the back.",
+  "order": 5
+}

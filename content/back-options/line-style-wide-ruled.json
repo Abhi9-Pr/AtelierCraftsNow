@@ -1,0 +1,8 @@
+{
+  "group": "line-style",
+  "label": "Wide ruled",
+  "lineType": "ruled",
+  "spacing": "wide",
+  "available": true,
+  "order": 2
+}

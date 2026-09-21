@@ -1,0 +1,13 @@
+# Only used by the database commands (npm run db:local, npm run db:remote).
+# It is named wrangler.d1.toml, not wrangler.toml, so Cloudflare Pages never reads it as the
+# project's own settings: the live database is bound in the Cloudflare dashboard instead.
+name = "atelier-orders"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "atelier-orders"
+# On your computer any name works. For npm run db:remote, replace it with the real id that
+# `npx wrangler d1 create atelier-orders` prints. See docs/SETUP.md, "Orders and the dashboard".
+database_id = "atelier-local"
+migrations_dir = "migrations"

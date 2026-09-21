@@ -1,0 +1,13 @@
+{
+  "title": "Frostwing",
+  "theme": "fantasy-whimsical",
+  "artwork": "/artwork/frostwing-dragon.jpg",
+  "artworkAlt": "Watercolor of a pale blue dragon curled around a snow-covered peak beneath a thin crescent moon.",
+  "quote": "Winter keeps its own dragon and feeds it silence.",
+  "headerText": "CATCH A THOUGHT",
+  "description": "A pale dragon coils around a snowed-in peak under a thin moon. Cold blues and very little else.",
+  "priceINR": 199,
+  "available": false,
+  "order": 3,
+  "artType": "watercolor-wet-on-wet-wash"
+}
