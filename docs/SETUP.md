@@ -60,12 +60,12 @@ copy .env.example .env        (Windows, Command Prompt)
 cp .env.example .env          (Mac, Linux, Git Bash, PowerShell)
 ```
 
-| Variable | Needed? | What it is |
-| --- | --- | --- |
-| `VITE_FORM_ACCESS_KEY` | Yes, for the request form | The Web3Forms access key. Get it free at <https://web3forms.com>: enter the email address that should receive requests, and the key is emailed to you. |
-| `VITE_FORMSPREE_FORM_ID` | Only if you switch to Formspree | The last part of your Formspree form's address, for example `abcdwxyz`. |
-| `VITE_WEB_ANALYTICS_TOKEN` | Optional | The site token from a Cloudflare Web Analytics snippet. Adds visitor counting to the built pages. Public by design. See [ANALYTICS.md](ANALYTICS.md#total-visitors-cloudflare-web-analytics). |
-| `VITE_TURNSTILE_SITE_KEY` | Optional | The public key of a Cloudflare Turnstile widget. Adds a spam check to the request form. It works only together with `TURNSTILE_SECRET`. See [Orders and the dashboard](#the-spam-check-optional). |
+| Variable 					 | Needed? 							| What it is |
+| -------------------------- | -------------------------------- | ---------- |
+| `VITE_FORM_ACCESS_KEY` 	 | Yes, for the request form 		| The Web3Forms access key. Get it free at <https://web3forms.com>: enter the email address that should receive requests, and the key is emailed to you. |
+| `VITE_FORMSPREE_FORM_ID` 	 | Only if you switch to Formspree 	| The last part of your Formspree form's address, for example `abcdwxyz`. |
+| `VITE_WEB_ANALYTICS_TOKEN` | Optional 						| The site token from a Cloudflare Web Analytics snippet. Adds visitor counting to the built pages. Public by design. See [ANALYTICS.md](ANALYTICS.md#total-visitors-cloudflare-web-analytics). |
+| `VITE_TURNSTILE_SITE_KEY`  | Optional 						| The public key of a Cloudflare Turnstile widget. Adds a spam check to the request form. It works only together with `TURNSTILE_SECRET`. See [Orders and the dashboard](#the-spam-check-optional). |
 
 These are the settings the built site can see. The settings for orders and the sign-in are different: they are kept on the host, never in the site, and are listed in [Orders and the dashboard](#orders-and-the-dashboard).
 
