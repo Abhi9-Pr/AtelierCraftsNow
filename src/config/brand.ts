@@ -14,14 +14,14 @@ export const brand = {
   },
   domain,
   siteUrl: `https://${domain}`,
-  email: 'info@ateliercraftsnow.in',
+  email: 'info@ateliercraftsnow.co.in',
   /** Low-opacity text printed at the foot of Side B */
   watermark: 'ATELIER CRAFTS NOW',
   social: {
     instagram: {
       label: 'Instagram',
       handle: '@apatelier',
-      url: 'https://www.instagram.com/ateliercraftsnow',
+      url: 'https://www.instagram.com/abhi9_3110?stkn=ODJrb3BjMHVvMzl0',
     },
     pinterest: {
       label: 'Pinterest',
