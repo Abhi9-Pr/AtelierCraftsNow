@@ -1,4 +1,4 @@
-import raw from '../_generated/catalog.json' with { type: 'json' }
+import raw from '../_generated/catalog.json'
 import type { BackGroup, Bookmark } from '../../src/types/index.ts'
 
 /** A bookmark as far as ordering is concerned. */
