@@ -3,7 +3,7 @@
 backend:
   name: github
   # Change this to your own GitHub account and repository, for example: priya/ateliercraftsnow
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPOSITORY
+  repo: Abhi9-Pr/AtelierCraftsNow
   branch: main
   # The login helper that ships with the site, in functions/api. The site's own
   # address is added by admin/index.html, so it is not written here.
