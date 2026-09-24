@@ -9,5 +9,5 @@ binding = "DB"
 database_name = "atelier-orders"
 # On your computer any name works. For npm run db:remote, replace it with the real id that
 # `npx wrangler d1 create atelier-orders` prints. See docs/SETUP.md, "Orders and the dashboard".
-database_id = "atelier-local"
+database_id = "a32282bc-b67f-4bff-af68-11258f84dded"
 migrations_dir = "migrations"
