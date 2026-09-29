@@ -1,8 +1,12 @@
 {
-  "label": "Line style",
-  "kind": "lines",
-  "slot": "lines",
+  "defaultOn": true,
   "choice": "required",
+  "priceINR": 19,
+  "align": "center",
   "hint": "The lines you write on.",
-  "order": 2
+  "order": 2,
+  "label": "Random Lines",
+  "kind": "lines",
+  "image": "/back/transparent-background.png",
+  "slot": "lines"
 }
