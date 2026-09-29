@@ -3,5 +3,7 @@
   "available": true,
   "group": "line-style",
   "label": "Random",
-  "image": "/back/transparent-background.png"
+  "image": "/back/transparent-background.png",
+  "order": 1,
+  "lineType": "custom"
 }
